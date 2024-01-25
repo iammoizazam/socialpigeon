@@ -30,7 +30,7 @@ lint-fix: venv  ## 📜 Lint & format, will try to fix errors and modify code
 	&& black $(SRC_DIR)
 
 image:  ## 🔨 Build container image from Dockerfile 
-	docker build . --file build/Dockerfile \
+	docker build . --file Dockerfile \
 	--tag $(IMAGE_REG)/$(IMAGE_REPO):$(IMAGE_TAG)
 
 push:  ## 📤 Push container image to registry 
