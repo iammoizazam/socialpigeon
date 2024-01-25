@@ -1,34 +1,10 @@
 from flask import Flask, render_template, request, flash, redirect, url_for, session, jsonify, send_file,make_response
 import os
 from werkzeug.utils import secure_filename
-from flask_mysqldb import MySQL
+from app import app
 
 
 
-app = Flask(__name__)
-app.secret_key = 'convex_application'
-
-# app.config['MYSQL_HOST'] = 'localhost'
-# app.config['MYSQL_USER'] = 'root'
-# app.config['MYSQL_PASSWORD'] = 'convexsql123'
-# app.config['MYSQL_DB'] = 'influencer'
-
-
-app.config['MYSQL_HOST'] = 'localhost'
-app.config['MYSQL_USER'] = 'socialpigeon'
-app.config['MYSQL_PASSWORD'] = 'SOcial$5432#'
-app.config['MYSQL_DB'] = 'socialpigeon'
-app.config['UPLOAD_FOLDER'] ="/var/www/html/socialpegion/static/userImages"
-app.config['MAX_CONTENT_PATH'] = 16 * 1024 * 1024
-
-# app.config['MYSQL_HOST'] = '10.100.50.44'
-# app.config['MYSQL_USER'] = 'socialpigeon'
-# app.config['MYSQL_PASSWORD'] = 'SOcial$5432#'
-# app.config['MYSQL_DB'] = 'socialpigeon'
-
-app.config['UPLOADED_PATH'] = os.path.join(app.root_path, 'upload')
-
-mysql = MySQL(app)
 
 
 def insertRecord(Fname,Lname,email,phone,add1,add2,website,category,youtubelink,youtubefollowers,youtubevideo,youtubeshorts,facebooklink,facebookfollowers,facebookpost,facebookvideo,facebookstory,instagramlink,instagramfollowers,instagrampost ,instagramvideo,instagramstory,tiktoklink,tiktokfollowers,tiktokcharges,LinkedInlink,LinkedInfollowers,LinkedIncharges,twitterlink,twitterfollowers,twitterpost,twittervideo,BrandSponsor,LikeUsKnow,ageRange,storeraid ):
@@ -271,5 +247,3 @@ def Brands():
 
 
 
-if __name__ == '__main__':
-    app.run(debug=True, host="0.0.0.0",threaded=True)
