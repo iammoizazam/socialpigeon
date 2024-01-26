@@ -17,7 +17,7 @@ ENV MYSQL_DATA_DIR=/var/lib/mysql \
 
 #ADD ["db_dump.sql", "/tmp/dump.sql"]
 
-RUN /etc/init.d/mysql start && \
+RUN systemctl start mysql && \
          mysql -u root -p$MYSQL_ROOT_PASSWORD  -e "create database socialpigeon;" 
 #" && \
  #       mysql -u root -p${MYSQL_ROOT_PASSWORD}  < /tmp/dump.sql
