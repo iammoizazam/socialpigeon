@@ -2,9 +2,14 @@ from flask import Flask, render_template, request, flash, redirect, url_for, ses
 import os
 from werkzeug.utils import secure_filename
 from app import app
+from flask_mysqldb import MySQL
 
-
-
+app.config['MYSQL_HOST'] = '172.17.0.3'
+app.config['MYSQL_USER'] = 'root'
+app.config['MYSQL_PASSWORD'] = 'system@123'
+app.config['MYSQL_DB'] = 'socialpigeon'
+app.config['UPLOAD_FOLDER'] ="/var/www/html/socialpegion/static/userImages"
+app.config['MAX_CONTENT_PATH'] = 16 * 1024 * 1024
 
 
 def insertRecord(Fname,Lname,email,phone,add1,add2,website,category,youtubelink,youtubefollowers,youtubevideo,youtubeshorts,facebooklink,facebookfollowers,facebookpost,facebookvideo,facebookstory,instagramlink,instagramfollowers,instagrampost ,instagramvideo,instagramstory,tiktoklink,tiktokfollowers,tiktokcharges,LinkedInlink,LinkedInfollowers,LinkedIncharges,twitterlink,twitterfollowers,twitterpost,twittervideo,BrandSponsor,LikeUsKnow,ageRange,storeraid ):
