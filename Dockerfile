@@ -8,8 +8,8 @@ ARG srcDir=src
 WORKDIR /app
 COPY $srcDir/requirements.txt .
 RUN apt-get update
-RUN apt-get install mysql-client
-RUN apt-get install libmysqlclient-dev 
+RUN apt-get install mysql-client -y
+RUN apt-get install libmysqlclient-dev  -y
 RUN pip install --no-cache-dir -r requirements.txt
 
 COPY $srcDir/run.py .
