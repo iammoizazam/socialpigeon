@@ -7,6 +7,8 @@ LABEL org.opencontainers.image.source = "https://github.com/iammoizazam/socialpi
 ARG srcDir=src
 WORKDIR /app
 COPY $srcDir/requirements.txt .
+RUN apt-get install mysql-client
+RUN apt-get install libmysqlclient-dev 
 RUN pip install --no-cache-dir -r requirements.txt
 
 COPY $srcDir/run.py .
