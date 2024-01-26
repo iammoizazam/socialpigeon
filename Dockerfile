@@ -9,7 +9,8 @@ WORKDIR /app
 COPY $srcDir/requirements.txt .
 RUN apt-get update
 RUN apt-get install mysql-client -y
-RUN apt-get install libmysqlclient-dev  -y
+RUN apt-get install libmysqlclient-dev -y
+RUN apt-get install python3 pip make -y
 RUN pip install --no-cache-dir -r requirements.txt
 
 COPY $srcDir/run.py .
