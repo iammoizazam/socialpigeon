@@ -1,4 +1,4 @@
-FROM python:3.9-slim-buster
+FROM ubuntu:latest
 
 
 LABEL Name="Social Pigeon" Version=1.4.2
